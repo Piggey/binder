@@ -39,7 +39,7 @@ func (b *Binder) Bind(r *http.Request, obj any) error {
 
 	err = b.validate.StructCtx(r.Context(), obj)
 	if err != nil {
-		return fmt.Errorf("")
+		return fmt.Errorf("validation: %w", err)
 	}
 
 	return nil
